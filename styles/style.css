@@ -1,21 +1,501 @@
+/* =========================================
+   UNIVERSITY STUDENT CLUBS PORTAL
+   GLOBAL DESIGN SYSTEM
+========================================= */
+
+:root {
+    --primary: #173b67;
+    --primary-dark: #102b4c;
+    --secondary: #3977b9;
+    --accent: #dcecff;
+
+    --background: #f5f7fa;
+    --surface: #ffffff;
+
+    --text: #202b38;
+    --muted: #687789;
+    --border: #e5eaf0;
+
+    --radius: 12px;
+    --container: 1120px;
+}
+
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    margin: 0;
-    padding: 30px;
-    font-family: Arial, sans-serif;
-    background: #f5f7fa;
-    color: #222;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.7;
 }
 
-h1 {
-    color: #173b67;
+a {
+    color: inherit;
 }
 
-@media (max-width: 768px) {
-    body {
-        padding: 16px;
-    }
+.container {
+    width: min(var(--container), 90%);
+    margin: 0 auto;
 }
+
+.section-padding {
+    padding: 85px 0;
+}
+
+/* =========================================
+   HEADER & NAVIGATION
+========================================= */
+
+.site-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    z-index: 10;
+}
+
+.nav-wrapper {
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logo,
+.footer-logo {
+    color: var(--primary);
+    font-size: 25px;
+    font-weight: 800;
+    text-decoration: none;
+    letter-spacing: -1px;
+}
+
+.logo span,
+.footer-logo span {
+    color: var(--secondary);
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 28px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--primary);
+}
+
+/* =========================================
+   GLOBAL TYPOGRAPHY
+========================================= */
+
+.eyebrow {
+    display: inline-block;
+    color: var(--secondary);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+    letter-spacing: -0.7px;
+}
+
+p {
+    color: var(--muted);
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 30px;
+    margin-bottom: 42px;
+}
+
+.section-heading h2 {
+    color: var(--primary);
+    font-size: 36px;
+}
+
+.section-heading > p {
+    max-width: 380px;
+    font-size: 14px;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 13px 23px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border: 1px solid var(--border);
+    background: white;
+    color: var(--primary);
+}
+
+.btn-outline:hover {
+    border-color: var(--primary);
+}
+
+.btn-light {
+    background: white;
+    color: var(--primary);
+}
+
+.btn-light:hover {
+    background: var(--accent);
+}
+
+/* =========================================
+   PAGE HERO - SHARED INNER PAGES
+========================================= */
+
+.page-hero {
+    background: #eaf1fa;
+    padding: 75px 0;
+}
+
+.page-hero h1 {
+    max-width: 750px;
+    font-size: 49px;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.page-hero h1 span {
+    color: var(--secondary);
+}
+
+.page-hero p {
+    max-width: 620px;
+    font-size: 15px;
+}
+
+.breadcrumb {
+    display: flex;
+    gap: 12px;
+    margin-top: 27px;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.breadcrumb a {
+    color: var(--secondary);
+    text-decoration: none;
+}
+
+/* =========================================
+   SHARED CTA SECTION
+========================================= */
+
+.category-cta {
+    background: var(--accent);
+    text-align: center;
+    padding: 75px 20px;
+}
+
+.category-cta h2 {
+    color: var(--primary);
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.category-cta p {
+    margin-bottom: 25px;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.site-footer {
+    background: var(--primary-dark);
+    padding: 50px 0 25px;
+    text-align: center;
+}
+
+.footer-logo {
+    display: inline-block;
+    color: white;
+    margin-bottom: 12px;
+}
+
+.footer-content > p {
+    color: #c5d1df;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.copyright {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    font-size: 12px !important;
+}
+
+/* =========================================
+   HOMEPAGE
+   TEAM LEAD
+========================================= */
+
+.home-hero {
+    background: linear-gradient(135deg, #edf4fc, #dceaff);
+    padding: 90px 0;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.hero-text h1 {
+    font-size: 57px;
+    color: var(--primary);
+    margin-bottom: 22px;
+    max-width: 650px;
+}
+
+.hero-text h1 span {
+    color: var(--secondary);
+    display: block;
+}
+
+.hero-text > p {
+    max-width: 550px;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.hero-note {
+    margin-top: 27px;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.note-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #3a9b70;
+    border-radius: 50%;
+    margin-right: 7px;
+}
+
+.hero-visual {
+    position: relative;
+    padding: 20px;
+}
+
+.hero-visual-card {
+    min-height: 340px;
+    padding: 40px;
+    border-radius: 18px;
+    background: var(--primary);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 25px 50px rgba(23, 59, 103, 0.16);
+}
+
+.visual-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #c7ddf8;
+}
+
+.visual-symbol {
+    font-size: 75px;
+    color: #a7d0ff;
+    margin: 20px 0;
+}
+
+.hero-visual-card h2 {
+    font-size: 27px;
+    margin-bottom: 12px;
+}
+
+.hero-visual-card p {
+    color: #d6e3f1;
+    font-size: 13px;
+}
+
+.floating-card {
+    position: absolute;
+    bottom: -5px;
+    left: -10px;
+    background: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.10);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.floating-card span {
+    color: var(--secondary);
+    margin-right: 8px;
+}
+
+/* Homepage Introduction */
+
+.intro-section {
+    background: white;
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.intro-grid h2 {
+    font-size: 42px;
+    color: var(--primary);
+    max-width: 400px;
+}
+
+.intro-grid h2 span {
+    color: var(--secondary);
+}
+
+.intro-description p {
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+/* Homepage Explore Cards */
+
+.explore-section {
+    background: var(--background);
+}
+
+.explore-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.explore-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 25px;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.explore-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(23,59,103,0.08);
+}
+
+.card-number {
+    font-size: 11px;
+    color: var(--muted);
+}
+
+.explore-icon {
+    font-size: 30px;
+    color: var(--secondary);
+    margin: 25px 0 15px;
+}
+
+.explore-card h3 {
+    font-size: 19px;
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+
+.explore-card p {
+    font-size: 13px;
+    margin-bottom: 22px;
+}
+
+.card-link {
+    color: var(--secondary);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* Homepage CTA */
+
+.home-cta {
+    background: var(--primary);
+    padding: 75px 20px;
+    text-align: center;
+}
+
+.cta-content h2 {
+    max-width: 650px;
+    margin: 0 auto 18px;
+    font-size: 38px;
+    color: white;
+}
+
+.cta-content p {
+    color: #d6e3f1;
+    margin-bottom: 27px;
+}
+
+.cta-content .eyebrow {
+    color: #b8d8fc;
+}
+
+/* =========================================
+   TEAM LEAD CSS ENDS HERE
+========================================= */
