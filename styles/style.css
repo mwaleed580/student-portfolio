@@ -659,3 +659,97 @@ p {
     padding: 24px;
   }
 }
+
+/* =========================================
+   MEMBER 4 - CLUB HIGHLIGHTS
+========================================= */
+
+.achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.achievement-card {
+    background: white;
+    border: 1px solid #e5eaf0;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(23,59,103,0.08);
+}
+
+.achievement-visual {
+    min-height: 190px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background: #eaf1fa;
+    color: #173b67;
+}
+
+.achievement-visual > span {
+    font-size: 60px;
+}
+
+.achievement-visual small {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.tech-visual {
+    background: #eaf1fa;
+}
+
+.sports-visual {
+    background: #e8f2ed;
+    color: #27634a;
+}
+
+.culture-visual {
+    background: #f7eefa;
+    color: #81529a;
+}
+
+.debate-visual {
+    background: #fff0e6;
+    color: #a65e32;
+}
+
+.achievement-content {
+    padding: 27px;
+}
+
+.achievement-tag {
+    font-size: 10px;
+    color: #3977b9;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.achievement-content h2 {
+    font-size: 22px;
+    color: #173b67;
+    margin: 12px 0;
+}
+
+.achievement-content p {
+    font-size: 13px;
+}
+
+@media (max-width: 768px) {
+    .achievement-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .achievement-visual {
+        min-height: 160px;
+    }
+}
